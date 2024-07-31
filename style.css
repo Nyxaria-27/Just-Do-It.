@@ -1,0 +1,280 @@
+*,
+body,
+html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  background-image: url(assets/bg.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* overflow: hidden; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+:root {
+  --background: #000430;
+  --secondaryBackground: #171c48;
+  --text: #fff;
+  --purple: #828dff;
+  --teal: #24feee;
+
+  --progress: #090906;
+  --secondaryDarkBrown: #292723;
+  --darkBrown: #4b4a47;
+  --brown: #c1aa96;
+  --border: #d3cdca;
+}
+
+.navbar {
+  background-color: black;
+  height: 50px;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbar a {
+  font-style: oblique;
+  color: #000;
+  text-decoration: none;
+  margin-right: 20px;
+  transition: color 0.3s;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: #000;
+  text-decoration: none;
+  font-size: 17px;
+  transition: 0.7s ease;
+}
+
+.nav-links a:hover {
+  transition: 0.7s ease;
+  font-size: 19px;
+  color: #2d2d2d;
+}
+
+.container {
+  color: var(--text);
+  /* height: 500px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 120px 0 auto 0;
+  align-items: center;
+  max-width: 500px;
+  margin-top: 120px;
+  z-index: 1;
+}
+
+.stats-container {
+  padding: 30px;
+  border-radius: 20px;
+  border: 2px solid var(--border);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  width: 100%;
+}
+
+.details {
+  width: 100%;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+#progressBar {
+  width: 100%;
+  height: 10px;
+  background-color: var(--progress);
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+#progress {
+  width: 0%;
+  border-radius: 5px;
+  height: 10px;
+  background-color: var(--brown);
+  transition: width 0.5s ease;
+}
+
+#numbers {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  background-color: var(--brown);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+form {
+  margin-top: 60px;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  flex: 1;
+  padding: 17px;
+  background: var(--secondaryDarkBrown);
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  outline: none;
+  color: var(--text);
+}
+
+button {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--brown);
+  color: var(--secondaryDarkBrown);
+  font-size: 30px;
+  font-weight: bold;
+  outline: none;
+}
+
+#task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 30px;
+  width: 100%;
+  list-style: none;
+}
+
+.taskItem {
+  color: var(--progress);
+  background-color: var(--brown);
+  border: 2px solid var(--secondaryDarkBrown);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.completed p {
+  text-decoration: line-through;
+  color: var(--darkBrown);
+}
+
+.taskItem img {
+  width: 24px;
+  height: 24px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.tasks-wrapper {
+  max-height: 400px; /* Sesuaikan tinggi maksimal sesuai kebutuhan */
+  overflow-y: auto; /* Membuat task list menjadi scrollable */
+  width: 100%;
+}
+
+/* Scrollbar Styling for WebKit (Chrome, Safari) */
+.tasks-wrapper::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+.tasks-wrapper::-webkit-scrollbar-track {
+  background: var(--secondaryDarkBrown); /* Background of the track */
+  border-radius: 10px;
+}
+
+.tasks-wrapper::-webkit-scrollbar-thumb {
+  background: var(--brown); /* Color of the scrollbar thumb */
+  border-radius: 10px;
+  border: 2px solid var(--secondaryDarkBrown); /* Adds space around thumb */
+}
+
+.tasks-wrapper::-webkit-scrollbar-thumb:hover {
+  background: var(--darkBrown); /* Color when hovered */
+}
+
+/* Scrollbar Styling for Firefox */
+.tasks-wrapper {
+  scrollbar-width: thin;
+  scrollbar-color: var(--brown) var(--secondaryDarkBrown);
+}
+
+/* Styling for IE and Edge */
+.tasks-wrapper {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+/*
+.card {
+  width: 300px;
+  height: 400px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  z-index: 99;
+} */
+
+.footer {
+  background-color: #292723;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 99;
+}

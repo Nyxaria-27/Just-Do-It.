@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To do List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="navbar-container">
+        <!-- <div class="dropdown"></div> -->
+        <a href="#" class="brand">
+          <h1>Just do it.</h1>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Help</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <div class="stats-container">
+        <div class="details">
+          <h2>Today's Progress</h2>
+          <h3>Keep it up</h3>
+          <div id="progressBar">
+            <div id="progress"></div>
+          </div>
+          <div class="progress-numbers"></div>
+        </div>
+        <div class="stats-numbers">
+          <p id="numbers">0 / 0</p>
+        </div>
+      </div>
+      <form action="">
+        <input
+          type="text"
+          placeholder="Write your task"
+          name=""
+          id="taskInput" />
+        <button id="newTask" type="submit">+</button>
+      </form>
+
+      <div class="tasks-wrapper">
+        <ul id="task-list"></ul>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>
+        &copy; 2024 By Dwi Wahyu Ramadhan <br />
+        All Rights Reserved.
+      </p>
+    </footer>
+
+    <script src="data.js"></script>
+  </body>
+</html>
